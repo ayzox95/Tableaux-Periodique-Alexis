@@ -1,0 +1,165 @@
+/* Styles globaux */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f0f0f5;
+    color: #333;
+}
+
+h1 {
+    margin-top: 20px;
+    color: #222;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Conteneur principal du tableau */
+#tableau {
+    display: grid;
+    grid-template-columns: repeat(18, 80px); /* Largeur des colonnes ajustée */
+    gap: 15px; /* Espacement entre les éléments du grid */
+    justify-content: center;
+    margin: 30px auto;
+    width: max-content;
+}
+
+/* Styles pour chaque élément */
+.element {
+    background: linear-gradient(145deg, #ffffff, #f7f7f7); /* Dégradé doux */
+    border: 2px solid #e0e0e0; /* Bordure fine */
+    border-radius: 12px; /* Coins arrondis */
+    text-align: center;
+    padding: 15px 10px; /* Ajustement de l'espace intérieur */
+    font-size: 14px;
+    width: 80px; /* Largeur des éléments */
+    height: 100px; /* Hauteur des éléments */
+    position: relative;
+    box-sizing: border-box; /* Inclure la bordure et le padding dans la taille totale */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), inset 0 -3px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    overflow: hidden; /* Empêche le contenu de déborder */
+}
+
+/* Animation au survol */
+.element:hover {
+    transform: scale(1.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), inset 0 -3px 6px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(145deg, #fefefe, #eaeaea);
+}
+
+/* Sous-composants d'un élément */
+.element .numero {
+    font-size: 12px;
+    color: #666;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.element .symbole {
+    font-size: 24px; /* Symbole plus grand et visible */
+    font-weight: bold;
+    color: #222;
+}
+
+.element .nom {
+    font-size: 10px; /* Taille du texte réduite pour plus de place */
+    color: #555;
+    margin-top: 10px;
+    text-overflow: ellipsis; /* Troncature si le texte dépasse */
+    white-space: nowrap; /* Empêche le retour à la ligne */
+    overflow: hidden; /* Cache le texte qui dépasse */
+    width: 100%; /* Utilise toute la largeur disponible */
+}
+
+/* Couleurs spécifiques pour certaines catégories d'éléments */
+.element:nth-child(2n) {
+    background: linear-gradient(145deg, #e0f7fa, #b2ebf2); /* Bleu clair */
+}
+
+.element:nth-child(3n) {
+    background: linear-gradient(145deg, #ffe0b2, #ffcc80); /* Orange pastel */
+}
+
+.element:nth-child(4n) {
+    background: linear-gradient(145deg, #e1bee7, #d1c4e9); /* Violet doux */
+}
+
+.element:nth-child(5n) {
+    background: linear-gradient(145deg, #c8e6c9, #a5d6a7); /* Vert clair */
+}
+
+/* Styles pour les modales */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond sombre transparent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    animation: popIn 0.4s ease-out;
+}
+
+.modal-content h2 {
+    font-size: 1.5em;
+    margin: 0 0 10px;
+}
+
+.modal-content p {
+    font-size: 1em;
+    color: #555;
+    margin: 0;
+}
+
+.modal-content .close-btn {
+    margin-top: 15px;
+    background: #ff4d4f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.modal-content .close-btn:hover {
+    background: #e04143;
+}
+
+/* Animation d'apparition de la modale */
+@keyframes popIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
