@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Tableau Périodique - Alexis Roger
 
 Bienvenue dans le projet **Tableau Périodique** ! Ce projet a pour objectif de fournir une représentation interactive et éducative du tableau périodique des éléments. 
