@@ -34,7 +34,7 @@ Le projet est organisé comme suit :
 
 1. Clonez ce dépôt sur votre machine :
    ```bash
-   git clone https://github.com/Azox95/Tableaux-Periodique-Alexis.git.git
+   git clone https://github.com/Ayzox95/Tableaux-Periodique-Alexis.git.git
 
 ## 🖋️ Auteur
 
